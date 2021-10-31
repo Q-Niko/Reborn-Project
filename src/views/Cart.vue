@@ -1,18 +1,6 @@
 <template>
   <div class="container-fluid" id="cart">
 
-    <div class="row">
-            <div class="col-lg-10">
-                <h1 class="titolo desktop pt-3 pb-3">I miei articoli:</h1>
-                <h3 class="d-lg-none">Totale provvisorio (euro)</h3>
-                
-                
-                <button type="button" class="btn btn-outline-dark d-lg-none acquisto" data-toggle="button" aria-pressed="false" autocomplete="off">
-                  Procedi all'acquisto (n. articoli)
-                </button>
-            </div>
-        </div>
-
       <div class="row">
       <div class="col-lg-10">
       <div class="row border rounded margin-right: 2rem contenitorecarrello">
@@ -80,7 +68,9 @@
             
             
           </div>
+          
         </div>
+        <button v-on:click="cutWishList" class="rimuovi">Svuota WishList</button> 
       </div>
       </div>
   
@@ -148,6 +138,10 @@ export default {
 
     cutToCart: function () {
       return (this.$store.state.cart = []);
+    },
+
+    cutWishList: function () {
+      return (this.$store.state.wishList = []);
     },
 
     /* fine */
